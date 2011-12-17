@@ -13,10 +13,13 @@ if options.filename:
 else:
     file = 'data/new-hosts'
 out = open(file, 'w')
-if args.count > 0:
-    # get parameter host file
-    print args
 for line in f:
     out.write(line)
+if args.count > 0:
+    # get parameter host file
+    g = open('data/'+args[0]+'-hosts')
+    for line in g:
+        out.write(line)
 out.close()
-#shutil.copyfile(file, '/etc/hosts')
+
+shutil.copyfile(file, '/etc/hosts')
