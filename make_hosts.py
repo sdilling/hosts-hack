@@ -15,7 +15,7 @@ else:
 out = open(file, 'w')
 for line in f:
     out.write(line)
-if args.count > 0:
+if len(args) > 0:
     # get parameter host file
     g = open('data/'+args[0]+'-hosts')
     for line in g:
